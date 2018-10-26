@@ -30,3 +30,26 @@
     transform: rotate(360deg);
   }
 }
+
+
+ul {
+  text-align: left;
+  list-style-position: inside;
+  color: yellow;
+}
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a.active {
+  color: blue;
+}
