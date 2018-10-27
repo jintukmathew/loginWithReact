@@ -51,7 +51,8 @@ class Login extends Component {
     fetch('https://mk-api.herokuapp.com/resume/auth/login', {
       method: 'post',
       body: JSON.stringify(data),
-      mode: 'no-cors'
+      mode: 'no-cors',
+      credentials: 'include'
     }).then(function(response) {
       console.log(response);
       window.localStorage.setItem("jwt", response);
@@ -70,24 +71,25 @@ class Login extends Component {
     return (
 
       <div>
-        <div id="space">
-          <div id="buttons">
-          <NavLink activeClassName="active"  to="/register"><p id="signupButton" className="blue">Sign In</p></NavLink>
-          <NavLink activeClassName="active"  to="/login"><p id="loginButton" className= "yellow"> Login</p></NavLink>
-          </div>
+        <header className="App-header">
+          <div id="space">
+            <div id="buttons">
+            <NavLink activeClassName="active"  to="/register"><p id="signupButton" className="blue">Sign In</p></NavLink>
+            <NavLink activeClassName="active"  to="/login"><p id="loginButton" className= "yellow"> Login</p></NavLink>
+            </div>
 
-              <div>    
-              <div className="wrapper">
-                <div className="form-signin">       
-                  <h2 className="form-signin-heading">Please login</h2>
-                  <input value={this.state.email} onChange={evt => this.updateInputValue(evt,'email')} type="text" className="form-control" id="username" placeholder="Email Address" />
-                  <input value={this.state.password} onChange={evt => this.updateInputValue(evt,'pass')} type="password" className="form-control" id="password" placeholder="Password" />  
-                  <button className="btn btn-lg btn-primary btn-block" onClick={this.login}>Login</button>   
+                <div>    
+                <div className="wrapper">
+                  <div className="form-signin">       
+                    <h2 className="form-signin-heading">Please login</h2>
+                    <input value={this.state.email} onChange={evt => this.updateInputValue(evt,'email')} type="text" className="form-control" id="username" placeholder="Email Address" />
+                    <input value={this.state.password} onChange={evt => this.updateInputValue(evt,'pass')} type="password" className="form-control" id="password" placeholder="Password" />  
+                    <button className="btn btn-lg btn-primary btn-block" onClick={this.login}>Login</button>   
+                  </div>
                 </div>
-              </div>
-              </div>
-        </div>
-    
+                </div>
+          </div>
+        </header>
       </div>
     
 

@@ -53,7 +53,8 @@ class Register extends Component {
         fetch('https://mk-api.herokuapp.com/resume/auth/register', {
           method: 'post',
           body: JSON.stringify(data),
-          mode: 'no-cors'
+          mode: 'no-cors',
+          credentials: 'include'
         }).then(function(response) {
           console.log(response);
           //return response.json();
@@ -71,26 +72,28 @@ class Register extends Component {
     return (
 
         <div>
-        <div id="space">
-          <div id="buttons">
-          <NavLink activeClassName="active"  to="/register"><p id="signupButton" className="yellow">Sign In</p></NavLink>
-          <NavLink activeClassName="active"  to="/login"><p id="loginButton" className= "blue"> Login</p></NavLink>
-          </div>
-
-              <div>    
-              <div className="wrapper">
-                <div className="form-signin">       
-                  <h2 className="form-signin-heading">Please register</h2>
-                  <input value={this.state.name} onChange={evt => this.updateInputValue(evt,'name')} type="text" className="form-control" id="name" placeholder="Name" />
-                  <input value={this.state.email} onChange={evt => this.updateInputValue(evt,'email')} type="text" className="form-control" id="username" placeholder="Email Address" />
-                  <input value={this.state.password} onChange={evt => this.updateInputValue(evt,'pass')} type="password" className="form-control" id="password" placeholder="Password" />  
-                  <button className="btn btn-lg btn-primary btn-block" onClick={this.register}>Sign In</button>   
+            <header className="App-header">
+                <div id="space">
+                <div id="buttons">
+                <NavLink activeClassName="active"  to="/register"><p id="signupButton" className="yellow">Sign In</p></NavLink>
+                <NavLink activeClassName="active"  to="/login"><p id="loginButton" className= "blue"> Login</p></NavLink>
                 </div>
-              </div>
-              </div>
-        </div>
+
+                    <div>    
+                    <div className="wrapper">
+                        <div className="form-signin">       
+                        <h2 className="form-signin-heading">Please register</h2>
+                        <input value={this.state.name} onChange={evt => this.updateInputValue(evt,'name')} type="text" className="form-control" id="name" placeholder="Name" />
+                        <input value={this.state.email} onChange={evt => this.updateInputValue(evt,'email')} type="text" className="form-control" id="username" placeholder="Email Address" />
+                        <input value={this.state.password} onChange={evt => this.updateInputValue(evt,'pass')} type="password" className="form-control" id="password" placeholder="Password" />  
+                        <button className="btn btn-lg btn-primary btn-block" onClick={this.register}>Sign In</button>   
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </header>
     
-      </div>
+        </div>
     
 
       

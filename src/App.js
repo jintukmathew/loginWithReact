@@ -36,14 +36,14 @@ import Main from './components/main/Main';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
+    
       <Router>
         <div>
           {/* <NavBar /> */}
           <Route exact path="/" component={Register} />
           <Route strict path="/login" component={Login} />
           <Route strict path="/register" component={Register} />
-          <Route exact path="/home" component={Main} />
+          <Route exact path="/main" component={Main} />
           <Route path="/logs" render={() => <h1>Logs</h1>} />
           <Route
             path="/children"
@@ -56,10 +56,6 @@ const App = () => (
           />
         </div>
       </Router>
-    </header>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
   </div>
 );
 
